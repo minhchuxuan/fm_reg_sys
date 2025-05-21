@@ -1,25 +1,11 @@
-If you have any questions, feel free to ask!  :)  
-*To ensure the correctness of the experimental results, please run DCNv3 in FuxiCTR==2.0.1 or the latest version.*
-
-This model was formerly known as __DCNv3: Towards Next Generation Deep Cross Network for CTR Prediction__
-
-A new version of the paper and code update may be available soon...
-
-# FCN: Fusing Exponential and Linear Cross Network for Click-Through Rate Prediction
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/dcnv3-towards-next-generation-deep-cross/click-through-rate-prediction-on-criteo)](https://paperswithcode.com/sota/click-through-rate-prediction-on-criteo?p=dcnv3-towards-next-generation-deep-cross)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/dcnv3-towards-next-generation-deep-cross/click-through-rate-prediction-on-kdd12)](https://paperswithcode.com/sota/click-through-rate-prediction-on-kdd12?p=dcnv3-towards-next-generation-deep-cross)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/dcnv3-towards-next-generation-deep-cross/click-through-rate-prediction-on-kkbox)](https://paperswithcode.com/sota/click-through-rate-prediction-on-kkbox?p=dcnv3-towards-next-generation-deep-cross)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/dcnv3-towards-next-generation-deep-cross/click-through-rate-prediction-on-ipinyou)](https://paperswithcode.com/sota/click-through-rate-prediction-on-ipinyou?p=dcnv3-towards-next-generation-deep-cross)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/dcnv3-towards-next-generation-deep-cross/click-through-rate-prediction-on-avazu)](https://paperswithcode.com/sota/click-through-rate-prediction-on-avazu?p=dcnv3-towards-next-generation-deep-cross)
 
 
-![image](https://github.com/salmon1802/FCN/blob/master/fig/benchmark.png)
+# Multi-Field CTR Prediction: An Evolution of Factorization Machines (IT3190E)
 
+This repository contains the materials and code related to our Machine Learning (IT3190E) course project, focusing on the evolution of Factorization Machines for Click-Through Rate (CTR) prediction in multi-field categorical datasets. Our work involves a comprehensive review of seminal models, implementation, and a Proof-of-Concept demonstration.
 
 ## Model Overview
-<div align="center">
-    <img src="https://github.com/salmon1802/FCN/blob/master/fig/architecture.png" alt="FCN" />
-</div>
+
 
 ## Requirements
 python>=3.6  
@@ -32,30 +18,20 @@ numpy
 h5py  
 tqdm  
 
-## Experiment results
-![image](https://github.com/salmon1802/FCN/blob/master/fig/performance.png)
 
-## Datasets
-Get the datasets from https://github.com/reczoo/Datasets
 
-## Hyperparameter settings and logs
-Get the result from ./checkpoints
+## Model Overview
 
-## Acknowledgement
-This implementation is based on FuxiCTR and BARS. Thanks for their sharing and contribution.  
-BARS: https://github.com/openbenchmark  
-FuxiCTR: https://github.com/xue-pai/FuxiCTR
+This project investigates the progression of Factorization Machine-based models designed to tackle the challenge of modeling feature interactions in sparse, multi-field categorical data. We review four key contributions:
 
-## Citation
-If you find our code helpful for your research, please cite the following paper:
+1.  **Factorization Machines (FM):** The foundational model that introduced factorized pairwise interactions, enabling generalization in sparse data.
+2.  **Field-aware Factorization Machines (FFM):** Enhanced FMs by learning multiple latent vectors for each feature—one for each field it might interact with, thereby capturing field-specific interaction patterns.
+3.  **Field-weighted Factorization Machines (FwFM):** Offered a more parameter-efficient approach to field-awareness by reverting to a single latent vector per feature (like FM) but introducing learnable scalar weights for each pair of fields to modulate interaction strength.
+4.  **Field-matrixed Factorization Machines (FmFM/FM²):** Further generalized field-aware interactions by employing a full learnable matrix for each field pair to transform latent vectors, allowing for richer and more expressive interaction modeling. The FmFM framework also provides a unified perspective on FM and FwFM as constrained cases.
 
-```bibtex
-@article{li2025fcn,
-  title={FCN: Fusing Exponential and Linear Cross Network for Click-Through Rate Prediction},
-  author={Li, Honghao and Zhang, Yiwen and Zhang, Yi and Li, Hanwei and Sang, Lei and Zhu, Jieming},
-  journal={arXiv preprint arXiv:2407.13349},
-  year={2025}
-}
-```
+Our work includes an analysis of their architectures, mathematical underpinnings, parameter efficiency, and the evolution of how they handle field information.
+
+## Acknowledgements
+We would like to thank the authors of the seminal papers on FM, FFM, FwFM, and FmFM, whose work formed the basis of this project. We also acknowledge the FuxiCTR library for providing useful tools and implementations.
 
 
